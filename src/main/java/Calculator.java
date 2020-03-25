@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Calculator {
     public static Scanner in = new Scanner(System.in);
 
+
     public static String add(){
 
         System.out.println("How many numbers you want to work with?");
@@ -33,11 +34,20 @@ public class Calculator {
         System.out.println("The sum is " + sum);
         return "";
     }
+    public static Integer add(int numbersWork, List<Integer> list){
 
+        int sum = 0;
+        for(int j = 0; j < list.size(); j++){
+            sum = sum + list.get(j);
+        }
+
+        return sum;
+    }
     public static String multiply(){
 
         System.out.println("How many numbers you want to work with?");
         List<Integer> list = new ArrayList<Integer>();
+
         while (!in.hasNextInt()){
             System.out.println("enter a number!");
             in.next();
@@ -61,5 +71,15 @@ public class Calculator {
 
         System.out.println("The product is " + pro);
         return "";
+    }
+
+    public static Integer multiply(int numbersWork, List<Integer> list){
+
+        int pro = list.get(list.size()-1);
+        for(int j = 0; j < list.size()-1; j++){
+            pro = pro * list.get(j);
+        }
+
+        return pro;
     }
 }
